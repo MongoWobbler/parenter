@@ -1,19 +1,20 @@
-# parenter
+# Parenter
 
 Maya C++ plug-in. 
-Quick attempt at space matching using matrices. Ended up with a play count transform offset node. 
+Quick attempt at space matching using matrices. Ended up with a play count transform offset node. [Watch a video explaining node use, or read below.](https://youtu.be/NIWov6MI99Y)  
+[![VIDEO](https://media.giphy.com/media/FLCQfN74gj1zFsB5Ia/giphy.gif)](https://youtu.be/NIWov6MI99Y "Parenter")
 
-Use:
+Use:  
 Once plug-in is loaded, create a "parenter" node, and connect transforms World Matrices into the "parenter"'s Parent Matrices attributes. Pick a transform to be driven by the other transform, and plug in it's World Matrix attribute into the "parenter"'s Child Matrix attribute. Finally, plug in the output translate and rotate from the parent node into the child transform.
-Now notice the transform that is plugged into the Child Matrix attribute is driven by one of the parent transforms. Switch the driver by changing the Chosen Parent attribute. Switching the driver updates the transform on the child so that it stays in the same spot at the time it is switched.
+Now notice the transform that is plugged into the Child Matrix attribute is driven by one of the parent transforms. Switch the driver by changing the Chosen Parent attribute. Switching the driver updates the transform on the child so that it stays in the same spot at the time it is switched. 
 
-Known bug:
+Known bug:  
 Setting a key and switching the chosen parent attribute will make the child transform offset transformations everytime the timeline loops.
 
-CMAKE Instructions:
-Make sure to download FindMaya.cmake from:
-https://github.com/chadmv/cgcmake
-and place it in CMake's modules: CMAKE_INSTALL_PATH\share\cmake-VERSION\Modules
+CMAKE Instructions:  
+Make sure to download FindMaya.cmake from:  
+https://github.com/chadmv/cgcmake  
+and place it in CMake's modules: CMAKE_INSTALL_PATH\share\cmake-VERSION\Modules  
 Example: C:\Program Files\CMake\share\cmake-3.18\Modules\FindMaya.cmake
  
 To build:
